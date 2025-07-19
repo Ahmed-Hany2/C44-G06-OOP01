@@ -1,5 +1,6 @@
 ﻿using Assignment.Enums;
 using System.ComponentModel;
+using System.Security;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment
@@ -52,6 +53,16 @@ namespace Assignment
             
             else
                Console.WriteLine("Invalid season");
+
+
+            //4 - Assign the following Permissions(Read, write, Delete, Execute) in a
+            //form of Enum.
+            //● Create Variable from previous Enum to Add multible
+            //Permission
+            Permissions permissions = Permissions.Read | Permissions.Write | Permissions.Execute | Permissions.Delete;
+            Console.WriteLine("Permissions are: " + permissions);
+            if ((permissions & Permissions.Write) == Permissions.Write)
+                Console.WriteLine("User has Write permissions");
             
         }
     }

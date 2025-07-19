@@ -59,6 +59,20 @@ namespace Demo
 
             student.gender = (Gender) gender;
             #endregion
+
+            #region Enum Methods
+            string branch = "Alex";
+            Branch branch1 = (Branch)Enum.Parse(typeof(Branch), branch);
+
+            Array branchesames = Enum.GetNames(typeof(Branch));
+            foreach (var branchName in branchesames)
+            {
+                Console.WriteLine(branchName);
+            }
+
+            bool isExited = Enum.IsDefined(typeof(Branch), 70);
+            Console.WriteLine(isExited);
+            #endregion
         }
     }
 }

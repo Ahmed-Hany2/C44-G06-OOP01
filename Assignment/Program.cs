@@ -1,5 +1,6 @@
 ﻿using Assignment.Enums;
 using System.ComponentModel;
+using System.Drawing;
 using System.Security;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -63,7 +64,22 @@ namespace Assignment
             Console.WriteLine("Permissions are: " + permissions);
             if ((permissions & Permissions.Write) == Permissions.Write)
                 Console.WriteLine("User has Write permissions");
-            
+
+
+            //5.Create an enum called "Colors" with the basic colors(Red, Green, Blue)
+            //as its members.Write a C# program that takes a color name as input from
+            //the user and displays a message indicating whether the input color is a
+            //primary color or not.
+            Console.Write("Enter a color : ");
+            string input = Console.ReadLine();
+
+            bool isAllowed = Enum.TryParse(input, true, out Colors color);
+
+            if (isAllowed)
+                Console.WriteLine($"{color} is a primary color.");
+            else
+                Console.WriteLine($"{input} is not a primary color.");
+
         }
     }
 }

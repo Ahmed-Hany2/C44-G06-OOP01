@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace Demo.UserDefinedDataTypes
 {
-    internal class ClassA : ITypeA
+    internal class ClassB : ClassA
     {
-        protected int X;
-       
-        public int Y { get; set; }
-
-        void ITypeA.Print()
+        public ClassB()
         {
-            Console.WriteLine("Print ClassA");
+            Y = 10;
+            X = 20; // protected member from ClassA
         }
-
     }
 }
